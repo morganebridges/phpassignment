@@ -23,8 +23,7 @@
     $insert_user .= escapeString($sanitized_username);
     $insert_user .= "," . escapeString($sanitized_password);
     $insert_user .= ", 1)";
-    
-    $select_user_by_name .= "'". $sanitized_username."'";
+    $select_user_by_name .= escapeString($sanitized_username);
     $userExists = false;
     
     if($result_set = $mysqli->query($select_user_by_name)){
@@ -32,8 +31,7 @@
         while($row = $result_set->fetch_assoc()) {
             echo "User found matching passed in username, user will not be created <br>";
             echo "username :" . $row['username'] . " password:". $row['password'];
-             return;
-            
+             $userExists = true;
         }
     }else{
         echo "query failed";
@@ -45,7 +43,7 @@
             echo "User created <br>";
         
     }else{
-        echo "query failed";
+        return;
     }
     }
    

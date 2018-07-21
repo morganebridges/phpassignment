@@ -1,5 +1,7 @@
 <?php
     include 'functions.php';
+    include 'queryBuilder.php';
+    include 'constants.php';
     //mysqli connection object
     $mysqli = new mysqli("localhost","root","","users");
 
@@ -11,22 +13,9 @@
         echo "Password and password confirmation were not the same, please try again";
         return;
     }
-    /**
-     * Queries to be used for the register page
-     */
-    
-    $select_all_users = "SELECT * FROM USERS";
-
-    //Queries to use prepared statements
-    $select_user_by_name = "SELECT * FROM USERS WHERE username = ";
-    $insert_user = "INSERT INTO USERS (username, password, isActivated) VALUES (";
-    $insert_user .= escapeString($sanitized_username);
-    $insert_user .= "," . escapeString($sanitized_password);
-    $insert_user .= ", 1)";
-    $select_user_by_name .= escapeString($sanitized_username);
     $userExists = false;
     
-    if($result_set = $mysqli->query($select_user_by_name)){
+    if($result_set = $mysqli->query(constructFindUserByNameQuery($sanitized_username))){
 
         while($row = $result_set->fetch_assoc()) {
             echo "User found matching passed in username, user will not be created <br>";
@@ -39,12 +28,12 @@
     
     if(!$userExists){
         echo 'creating user<br>';
-        if($result_set = $mysqli->query($insert_user)){
+        if($result_set = $mysqli->query(insertUser($sanitized_username, $sanitized_password))){
             echo "User created <br>";
         
     }else{
         return;
     }
-    }
+}
    
 

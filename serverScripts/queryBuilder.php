@@ -23,7 +23,7 @@ function insertUserProfile($displayName, $bio, $quote, $imageFile, $userFk){
             .","
             ."NOW()"
             .","
-            .escapeString($bio)
+            .escapeString($quote)
             .","
             .escapeString($imageFile)
             .","

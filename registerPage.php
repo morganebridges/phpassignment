@@ -1,4 +1,5 @@
 <?php
+    include 'header.php';
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,7 +22,7 @@
     <label for="displayName">Display Name</label>
     <input type="text" name="displayName" label="Display Name"><br>
     <label for="bio">Bio</label>
-    <textarea cols="30" rows="10" name="bio" label="bio"></textarea><br>
+    <textarea cols="60" rows="5" name="bio" label="bio"></textarea><br>
     <label for="quote">Quote</label>
     <input type="text" name="quote" label="quote">
     <label for="fileToUpload">File To Upload</label>
@@ -31,3 +32,22 @@
     <label for="submit">Submit</label>
     <input type="submit">
 </form>
+
+<form>
+    
+</form>
+
+
+<?php 
+function sendMessage(){
+    // the message
+    $msg = "First line of text\nSecond line of text";
+
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+    // send email
+    mail("morganebridges@gmail.com","My subject",$msg);
+}
+
+?>

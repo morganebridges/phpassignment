@@ -29,3 +29,9 @@ Extra Credit:
 Figure out how to POST an image via a form, copy it into the user's media/images directory, and display it when the user logs in.
 
 Automatically create the user's media directory when they sign up.
+
+
+7/28 - Update:
+https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
+
+This page shows how to use the bootstrap grid system. Use the grid system to add layouts to your pages.

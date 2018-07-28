@@ -26,3 +26,14 @@ CREATE TABLE IF NOT EXISTS user_profile(
     ON DELETE CASCADE,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE IF NOT EXISTS user_posts(
+    id int NOT NULL AUTO_INCREMENT,
+    post_title varchar(128),
+    post_content varchar(1024),
+    user_fk int NOT NULL,
+    FOREIGN KEY (user_fk)
+    REFERENCES users(id)
+    ON DELETE CASCADE,
+    PRIMARY KEY(id)
+);

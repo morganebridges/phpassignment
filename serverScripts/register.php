@@ -10,11 +10,12 @@
     $sanitized_password_confirm = htmlspecialchars($_POST["password2"]);
     
     //User profile information
+    
     $displayName = htmlspecialchars($_POST["displayName"]);
     $bio = htmlspecialchars($_POST["bio"]);
     $quote = htmlspecialchars($_POST["quote"]);
     $imageFileName = basename($_FILES["fileToUpload"]["name"]);
-    var_dump($_FILES);
+
     if(!($sanitized_password === $sanitized_password_confirm)){
         echo "Password and password confirmation were not the same, please try again";
         return;
@@ -46,7 +47,7 @@
     
     /**
      * This function accepts an upload of an image and writes it out to the user's directory
-     * @param type $userId
+     * @param integer $userId
      */
     function submitImage($userId){
         $target_dir = "uploads/$userId/"; //String interpolation is available this way in PHP, but not suggested

@@ -14,3 +14,22 @@ function insertUser($username, $password){
     return $insert_user;
 }
 
+function insertUserProfile($displayName, $bio, $quote, $imageFile, $userFk){
+    $insert_profile = "INSERT INTO USER_PROFILE (display_name, bio, registration_date, quote, image_file, user_fk) VALUES (";
+    //This time I'm chaining my concatenation instead of concatenating each field together
+    $insert_profile .= escapeString($displayName)
+            .","
+            .escapeString($bio)
+            .","
+            ."NOW()"
+            .","
+            .escapeString($bio)
+            .","
+            .escapeString($imageFile)
+            .","
+            .$userFk;
+    
+    $insert_profile.= ");";
+    return $insert_profile;
+}
+

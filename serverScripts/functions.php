@@ -8,3 +8,9 @@
 function escapeString($input){
     return "'" . $input . "'";
 }
+
+function createDirIfNeeded($relativePath){
+    if (!file_exists($relativePath)) {
+    mkdir($relativePath, 0777, true);
+}
+}

@@ -35,3 +35,20 @@ Automatically create the user's media directory when they sign up.
 https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
 
 This page shows how to use the bootstrap grid system. Use the grid system to add layouts to your pages.
+
+Requirements:
+
+Don't need to wire up the database for posts, but leave a spot on your layout to put posts later.
+
+Goals:
+1. Make sure all of your pages are partitioned. 
+2. Style your navigation bar (the grid layed out in header.php)
+3. Style the registration page (it looks all crammed together).
+4. Style the login page
+5. Display the user's image on their profile page (all user's profile images are stored in user_profile), and can be
+found at /serverScripts/uploads/{userId}/{imageName} (don't worry too much about this, but give it a shot)
+6. Review components available in bootstrap: https://getbootstrap.com/docs/3.3/components
+    try to use 3 of the components above with your page, they are cool!
+7. create 3 custom styles that you will put in a file called "myStyles.css" in the /css directory
+
+Extra Credit : Wire up the posts and display all posts for a user on their profile page.

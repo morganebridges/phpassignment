@@ -1,6 +1,8 @@
 # phpassignment
 Homework for BDPA HSCC
 
+-Morgan Bridges - morganebridges@gmail.com
+
 Homework for the week of 7/22 - 
 
 User Profiles:
